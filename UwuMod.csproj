@@ -84,6 +84,7 @@
     <Compile Include="PauseMenuPatch.cs" />
     <Compile Include="TipPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TooltipPatch.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

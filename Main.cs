@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 namespace Hazelnut272.UwuMod
 {
+    /* To Do:
+    *   - Resource Tooltips
+    *   - Discovery text
+    *   - Build menu tooltips
+    *   - tooltips
+    *   - victory text
+    */
+
     public class Main : MelonMod
     {
         public static Main Instance;
@@ -46,13 +54,13 @@ namespace Hazelnut272.UwuMod
             string menuRoot = "Canvas-Overlay/Contents/SimpleMenuPrompt/PauseMenu(Clone)/VerticalLayout/";
 
             _tutorialText = GameObject.Find(menuRoot + "TutorialButton/Text").GetComponent<TextMeshProUGUI>();
-            _tutorialText.text = "Tutowiaw >.<";
+            _tutorialText.text = UwuTranslator.TranslateString(_tutorialText.text);
             TextMeshProUGUI quitText = GameObject.Find(menuRoot + "QuitButton/Backing/Text").GetComponent<TextMeshProUGUI>();
-            quitText.text = "Quit tuwu desktop QwQ";
+            quitText.text = UwuTranslator.TranslateString(quitText.text);
             TextMeshProUGUI restartText = GameObject.Find(menuRoot + "GiveUpButton/Backing/Text").GetComponent<TextMeshProUGUI>();
-            restartText.text = "Westawt \\^o^/";
+            restartText.text = UwuTranslator.TranslateString(restartText.text);
             TextMeshProUGUI resumeText = GameObject.Find(menuRoot + "ResumeButton/Backing/Text").GetComponent<TextMeshProUGUI>();
-            resumeText.text = "Wesume UwU";
+            resumeText.text = UwuTranslator.TranslateString(resumeText.text);
             LoggerInstance.Msg("Translated pause menu.");
         }
     }
