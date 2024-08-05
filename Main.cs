@@ -22,12 +22,16 @@ namespace Hazelnut272.UwuMod
         private TextMeshProUGUI _cash;
         private Image _cashSprite;
 
+        public static int SessionRN;
+
         public override void OnInitializeMelon()
         {
             base.OnInitializeMelon();
 
             Instance = this;
             LoggerInstance.Msg("Uwu mod enabled :3");
+
+            SessionRN = Random.Range(0, 100000000);
         }
 
         public static void Log(string msg)

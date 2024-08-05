@@ -9,23 +9,19 @@ namespace Hazelnut272.UwuMod
     public static class UwuTranslator
     {
 
-        public static string TranslateString(string text)
+        public static string TranslateString(string text, int seed = -1)
         {
             string output = text.ToLower();
 
             string[] tags = ExtractTags(text);
-
-            foreach (string tag in tags)
-            {
-                Console.WriteLine($"tag found: {tag.ToString()}");
-            }
 
             // Special Cases
             output = TranslateSpecialCases(output);
             // General letter replacement
             output = LetterReplacement(output);
             // silly faces
-            output = InsertFaces(output);
+            output = InsertFaces(output, seed);
+
             output = InsertTags(output, tags);
 
             return output;
@@ -57,7 +53,7 @@ namespace Hazelnut272.UwuMod
                     {
                         removedCharacters.Add(characters[x + indexOfOpeningBracket]);
                     }
-                    string? tag = String.Join(null, removedCharacters.ToArray());
+                    string tag = String.Join(null, removedCharacters.ToArray());
                     if (tag != null)
                         tags.Add(tag);
                 }
@@ -113,10 +109,19 @@ namespace Hazelnut272.UwuMod
 
 
         private static string[] RANDOM_FACES = { "qwq", ".-.", "Σ:3", "=w=", "@n@", "^_^", ":3", "\\^o^/", "T_T", "^-^", "uwu", "owo", "=^_^=", ":)", ":D", ">.<", ":p", "^^;", "*_+", ";]", "> ~ <", ":>", "c:" };
-        private static string InsertFaces(string input)
+        private static string InsertFaces(string input, int seed = -1)
         {
             string output = input;
-            Random random = new Random();
+            Random random;
+            if(seed == -1)
+            {
+                random = new Random();
+            }
+            else
+            {
+                random = new Random(seed + Main.SessionRN);
+            }
+
             int rand = random.Next(RANDOM_FACES.Length);
             output += $" {RANDOM_FACES[rand]}";
             return output;
