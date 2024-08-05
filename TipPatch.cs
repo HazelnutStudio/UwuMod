@@ -16,7 +16,7 @@ namespace Hazelnut272.UwuMod
         public const string SKIP_TIP_MESSAGE = "Tip: You can fast-forward the daytime by holding the clock button.";
         public static void Prefix(ref float delay, ref string key, ref string text)
         {
-            Main.Log($"YIPPEE!! {key}, {text}");
+            Main.Log($"Showing tip: key {key}, message {text}");
 
             switch (text)
             {

@@ -22,29 +22,6 @@ namespace Hazelnut272.UwuMod
             LoggerInstance.Msg("Uwu mod enabled :3");
         }
 
-        public override void OnUpdate()
-        {
-            base.OnUpdate();
-
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                LoggerInstance.Msg("disappearing sprite :3");
-                _cashSprite = GameObject.Find("Canvas-HUD/Contents/CashCounter(Clone)/Icon").GetComponent<Image>();
-                _cashSprite.color = new Color(0, 0, 0, 0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.F6))
-            {
-                LoggerInstance.Msg(":3");
-                _cash = GameObject.Find("Canvas-HUD/Contents/CashCounter(Clone)/Count").GetComponent<TextMeshProUGUI>();
-            }
-
-            if (Input.GetKey(KeyCode.F7))
-            {
-                _cash.text = ":3";
-            }
-        }
-
         public static void Log(string msg)
         {
             Instance.LoggerInstance.Msg(msg);
@@ -52,14 +29,10 @@ namespace Hazelnut272.UwuMod
 
         public void OnPauseMenuOpened()
         {
-            LoggerInstance.Msg("Yay!~");
+            LoggerInstance.Msg("Open pause menu detected.");
 
             MelonCoroutines.Start(TranslatePauseMenu());
             return;
-
-
-
-            //LoggerInstance.Msg($"set text. tutorialText = [{_tutorialText.ToString()}], quitText = [{quitText.ToString()}], restartText = [{restartText.ToString()}], resumeText = [{resumeText.ToString()}]");
         }
 
         private IEnumerator TranslatePauseMenu()
@@ -80,6 +53,7 @@ namespace Hazelnut272.UwuMod
             restartText.text = "Westawt \\^o^/";
             TextMeshProUGUI resumeText = GameObject.Find(menuRoot + "ResumeButton/Backing/Text").GetComponent<TextMeshProUGUI>();
             resumeText.text = "Wesume UwU";
+            LoggerInstance.Msg("Translated pause menu.");
         }
     }
 }
