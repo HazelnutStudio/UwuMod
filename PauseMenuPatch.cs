@@ -1,5 +1,3 @@
-using UnityEngine;
-using MelonLoader;
 using HarmonyLib;
 using Il2CppHabitanks.UI;
 

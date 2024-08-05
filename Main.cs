@@ -1,17 +1,8 @@
-﻿using System;
+﻿using Il2CppTMPro;
 using MelonLoader;
-using UnityEngine;
-using Il2CppHabitanks;
-using Il2CppTMPro;
-using Il2CppInterop.Runtime;
-using Il2Cpp;
-using System.Runtime.CompilerServices;
-using Il2CppHabitanks.UI;
-using Il2CppFoundation.Elements;
-using HarmonyLib;
-using System.Threading;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Hazelnut272.UwuMod
 {
@@ -66,7 +57,7 @@ namespace Hazelnut272.UwuMod
             MelonCoroutines.Start(TranslatePauseMenu());
             return;
 
-            
+
 
             //LoggerInstance.Msg($"set text. tutorialText = [{_tutorialText.ToString()}], quitText = [{quitText.ToString()}], restartText = [{restartText.ToString()}], resumeText = [{resumeText.ToString()}]");
         }

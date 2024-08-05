@@ -1,8 +1,6 @@
-﻿using System;
-using HarmonyLib;
-using Il2CppHabitanks;
+﻿using HarmonyLib;
 using Il2CppHabitanks.UI;
-using Il2CppFoundation.Elements;
+using System;
 
 namespace Hazelnut272.UwuMod
 {
