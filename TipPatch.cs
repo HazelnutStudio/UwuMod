@@ -4,11 +4,11 @@ using Il2CppHabitanks;
 using Il2CppHabitanks.UI;
 using Il2CppFoundation.Elements;
 
-namespace UwuMod
+namespace Hazelnut272.UwuMod
 {
     [HarmonyPatch(typeof(TipList), nameof(TipList.ShowTip), new Type[] { typeof(float), typeof(string), typeof(string) })]
     [HarmonyPatch(MethodType.Normal)]
-    public static class Patch
+    public static class TipPatch
     {
         public const string TIPBOX_TUTORIAL_MESSAGE = "These tip boxes will explain how to play the demo. (You can turn off tips in the pause menu.)";
         public const string TRAIL_TUTORIAL_MESSAGE = "Click and drag your Castle to draw a <#FF8FB4>Pheromone Trail.</color> Your Antlings will follow the trail.";

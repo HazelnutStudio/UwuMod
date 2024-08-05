@@ -2,7 +2,6 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using UwuMod;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -37,5 +36,5 @@ using UwuMod;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: MelonInfo(typeof(UwuMod.Main), "Uwu Mod", "1.0.0", "Hazelnut272")]
+[assembly: MelonInfo(typeof(Hazelnut272.UwuMod.Main), "Uwu Mod", "1.0.0", "Hazelnut272")]
 [assembly: MelonGame("Lychee Game Labs", "Habitanks")]
